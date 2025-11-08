@@ -27,6 +27,13 @@ const Header = ({ header }: { header: HeaderTypes }) => {
     <header
       // style={{paddingBottom: }}
       className={`Header_Container ${header.menu_type} ${header_position}`}>
+      
+      
+      <div className="Header-Logo-Wrap">
+        <Link href={"/"}>
+          <Image src={header.header_logo ? header.header_logo : logo} alt={header.title} width={500} height={500} className=""/>
+        </Link>
+      </div>
 
       {/* desktop hidden on mobile */}
       {header.header_menu && 
@@ -51,12 +58,6 @@ const Header = ({ header }: { header: HeaderTypes }) => {
       {/*  */}
 
       {/*  */}
-
-      <div className="Header-Logo-Wrap">
-        <Link href={"/"}>
-          <Image src={header.header_logo ? header.header_logo : logo} alt={header.title} width={500} height={500} className=""/>
-        </Link>
-      </div>
 
       {/* cart/account */}
       <div className="UserButtons">
